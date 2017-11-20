@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" type="text/css" />
+  <link rel="stylesheet" href="css/styles.css" type="text/css" />
+  <title>Miss Makeup!</title>
+  </head>
+<body>
+  <header>
+      <div>
+          <a class="headerlogo" href="index.html">
+              <img src="img/logo.jpg" />
+          </a>
+          <span id="headername">Miss Makeup!</span>
+          <input type="search" class="searchbox" placeholder="Search our store" />
+      </div>
+
+      <nav class="backgroundgradient">
+          <ul>
+            <li><a class="navlink" href="index.html">Home</a></li>
+            <li><a class="navlink" href="inventory.html">Inventory</a></li>
+            <li><a class="navlink" href="contacts.html">Contact</a></li>
+            <li><a class="navlink" href="about.html">About</a></li>
+          </ul>
+      </nav>
+  </header>
+
+<fieldset>
+<legend>Miss Makeup's Top Models</legend>
+
+<ul>
+<li >
+  <article id="makeup1">
+  <h4>
+  <label for="imgmakeup1">  Name:</label>
+     The Berry </h4>
+  <img id="imgmakeup1" src="img/lipstick-2726998__340.png" width=200 height=200 alt="makeup1">
+
+  <h5><strong>Description:</strong> <br>This was our first make kit by Halle Berry!</h5>
+</article>
+</li>
+
+<li>
+  <article id="makeup2">
+<h4>
+<label for="imgmakeup2">  Name:</label>
+   The Ummer</h4>
+<img id="imgmakeup2" src="img/makeup-2454659__340.jpg" width=200 height=200 alt="makeup1">
+
+<h5><strong>Description:</strong> <br>This was our second makeup kit by Ummer!</h5>
+</article>
+</li>
+<li>
+  <article id="makeup3">
+  <h4>
+  <label for="imgmakeup3">  Name:</label>
+     Banks</h4>
+  <img id="imgmakeup3" src="img/makeup-2888141__340.jpg" width=200 height=200 alt="makeup1">
+
+  <h5><strong>Description:</strong> <br>This is our newest makeup kit by Tyra Banks!</h5>
+
+</article>
+
+</li>
+</ul>
+</fieldset>
+
+<footer>
+  <p>Our address is <address>1011 Crater Ave, Moon City: THE MOON</address></p>
+  <p class="textcontent">All site contents is copyright <a class="mainlink" href="http://www.missmakeup.com">Miss Makeup!</a></p>
+  <p class="smalltext">This page was generated on <time>10:25:04.123</time>.</p>
+</footer>
+
+<template id="producttemplate">
+<article>
+  <label id="lblName" for="productimage">Name:</label>
+  <img id="pimage" name="productimage" class="productarticlelargeimage" src="" alt="product image">
+  <article name="productdescription" class="productarticledescription" >
+
+  </article>
+  </article>
+</template>
+<template id="user">
+<div>User</div>
+     <template id="address">
+             <div>Address</div>
+     </template>
+</template>
+<script>
+  var makeup = document.querySelector('#makeup1').createShadowRoot();
+  /*Step1*/
+  let prdTemplate = document.querySelector('#producttemplate');
+  /*Step2*/
+  let clone = document.importNode(prdTemplate.content, true);
+  /*Step3*/
+
+  clone.querySelector('#pimage').src = 'img/img/lipstick-2726998__340.png';
+  clone.querySelector('#lblName').textContent = 'The Berry';
+
+ /*Step4*/
+  makeup.appendChild(clone);
+  let userTemplate = document.querySelector('#user');
+  let userClone = document.importNode(userTemplate.content, true);
+  document.body.appendChild(userClone);
+    let addressTemplate = document.querySelector('#address');
+    let addressClone = document.importNode(addressTemplate.content, true);
+  document.body.appendChild(addressClone);
+  $('.MyInput').change(function() {
+       alert(`This is from an Input Named  `+ $(this).attr('id'));
+       $(this).addClass('Highlight');
+     });
+     $('#myID').click(function() { alert('The element myID was clicked'); });
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>
